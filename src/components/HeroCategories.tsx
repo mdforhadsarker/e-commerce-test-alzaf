@@ -5,7 +5,6 @@ import Image from "next/image";
 
 const HeroCategories = async () => {
   const categories = await fetchCategories();
-
   return (
     <div className="container mx-auto h-auto">
       <ul className="w-64 bg-white shadow-md">
