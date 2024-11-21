@@ -25,8 +25,10 @@ const HeroCategories = async () => {
                   <Image
                     src="/arrow-right.png"
                     alt="arrow icon"
-                    width={16}
-                    height={16}
+                    width={500}
+                    height={500}
+                    className="w-full h-6"
+                    priority
                   />
                 </div>
               )}
