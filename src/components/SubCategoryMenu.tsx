@@ -8,7 +8,7 @@ const SubCategoryMenu: React.FC<{ categories: Category[] }> = ({
   categories,
 }) => {
   return (
-    <ul className="bg-white shadow-md p-2 w-64">
+    <ul className="bg-white shadow-md p-2 w-64 border-l-[#D6D6D6] border-l-2">
       {categories.map((subCategory) => (
         <SubCategoryItem key={subCategory.id} subCategory={subCategory} />
       ))}
@@ -52,7 +52,7 @@ const SubCategoryItem: React.FC<{ subCategory: Category }> = ({
         )}
       </Link>
 
-      {/* Render subcategories only when hovered */}
+      {/* render subcategories only when hovered */}
       {subCategory.childrens &&
         subCategory.childrens.length > 0 &&
         isHovered && (

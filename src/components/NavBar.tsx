@@ -3,12 +3,12 @@ import HeroCategories from "./HeroCategories";
 
 const NavBar = () => {
   return (
-    <div className="relative text-sm container mx-auto w-full">
-      {/* Bottom navbar */}
+    <div className="relative z-20 text-sm container mx-auto w-full">
+      {/* bottom navbar */}
       <div className="container mx-auto h-[70px] flex items-center w-full">
         <div className="flex justify-between items-center w-full">
-          {/* Logo */}
-          <div className="">
+          {/* logo */}
+          <div>
             <Image
               src="/logo.png"
               alt="Logo"
@@ -18,8 +18,8 @@ const NavBar = () => {
             />
           </div>
 
-          {/* Search bar */}
-          <div className=" relative flex flex-grow items-center mx-4">
+          {/* search bar */}
+          <div className="relative flex flex-grow items-center mx-4">
             <div className="ml-2 w-full">
               <input
                 type="search"
@@ -41,7 +41,7 @@ const NavBar = () => {
             </div>
           </div>
 
-          {/* Icons */}
+          {/* icons */}
           <div className="flex space-x-8 items-center">
             <div className="gap-4 flex items-center">
               <div className="bg-[#F5F5F5] px-2 py-2 rounded-md">
@@ -76,7 +76,7 @@ const NavBar = () => {
               </div>
             </div>
 
-            <div className="">
+            <div>
               <Image
                 src="/cloud.png"
                 className="cursor-pointer w-full h-14"
@@ -90,7 +90,7 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Categories Section */}
+      {/* categories section */}
       <div className="absolute top-[70px] left-0 w-full">
         <HeroCategories />
       </div>

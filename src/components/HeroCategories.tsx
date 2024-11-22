@@ -19,10 +19,7 @@ const HeroCategories = async () => {
       ) : (
         <ul className="w-64 bg-white shadow-md">
           {categories.map((category) => (
-            <li
-              key={category.id}
-              className="py-2 px-4 group relative hover:bg-gray-100"
-            >
+            <li key={category.id} className="py-2 px-4 group relative">
               <Link
                 href={category.link}
                 className="flex items-center space-x-2 text-sm text-black group-hover:text-[#F97316]"
