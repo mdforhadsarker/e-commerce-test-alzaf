@@ -8,7 +8,7 @@ const HeroCategories = async () => {
 
   try {
     categories = await fetchCategories();
-  } catch (error) {
+  } catch {
     categories = [];
   }
 
