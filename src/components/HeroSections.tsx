@@ -30,7 +30,7 @@ const HeroSections: React.FC = () => {
         width={5000}
         height={5000}
         priority
-        className="w-full h-[530px] object-cover transition-opacity duration-1000"
+        className="w-full h-[391px] object-cover transition-opacity duration-1000"
       />
 
       {/* dots navigation */}

@@ -8,7 +8,7 @@ const SubCategoryMenu: React.FC<{ categories: Category[] }> = ({
   categories,
 }) => {
   return (
-    <ul className="bg-white shadow-md p-2 w-64 border-l-[#D6D6D6] border-l-2">
+    <ul className="bg-white shadow-md w-[230px] h-[381px] px-2 border-l-[#D6D6D6] border-l-2">
       {categories.map((subCategory) => (
         <SubCategoryItem key={subCategory.id} subCategory={subCategory} />
       ))}
@@ -23,20 +23,20 @@ const SubCategoryItem: React.FC<{ subCategory: Category }> = ({
 
   return (
     <li
-      className="py-2 group relative"
+      className="group relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <Link
         href={subCategory.link}
-        className={`flex items-center space-x-2 text-sm ${
+        className={`flex items-center text-xs ${
           isHovered ? "text-[#F97316]" : "text-black"
         }`}
       >
-        <span className="flex-1">{subCategory.title}</span>
+        <span className="flex-1 pt-[10px]">{subCategory.title}</span>
         {subCategory.childrens && subCategory.childrens.length > 0 && (
           <div
-            className={`ml-2 transition-opacity ${
+            className={`ml-2 transition-opacity pt-[10px] ${
               isHovered ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -45,20 +45,19 @@ const SubCategoryItem: React.FC<{ subCategory: Category }> = ({
               alt="arrow icon"
               width={500}
               height={500}
-              className="w-full h-6"
+              className="w-full h-4"
               priority
             />
           </div>
         )}
       </Link>
 
-      {/* render subcategories only when hovered */}
       {subCategory.childrens &&
         subCategory.childrens.length > 0 &&
         isHovered && (
-          <ul className="absolute left-full top-0 z-10 mt-0 p-2 w-64">
+          <div className="absolute left-full top-0 z-10 h-full">
             <SubCategoryMenu categories={subCategory.childrens} />
-          </ul>
+          </div>
         )}
     </li>
   );
