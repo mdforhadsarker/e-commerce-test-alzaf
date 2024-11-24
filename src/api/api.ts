@@ -22,3 +22,5 @@ export const fetchCategories = async (): Promise<Category[]> => {
 
   return res.json();
 };
+
+

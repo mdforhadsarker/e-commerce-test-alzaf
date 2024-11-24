@@ -1,11 +1,22 @@
 import Image from "next/image";
-import HeroCategories from "./HeroCategories";
+import Categories from "./Categories";
+import { Category, fetchCategories } from "../api/api";
 
-const NavBar = () => {
+
+
+const NavBar = async () => {
+  let categories: Category[] = [];
+
+  try {
+    categories = await fetchCategories();
+  } catch {
+    categories = [];
+  }
+
   return (
-    <div className="relative z-20 text-sm container mx-auto w-full">
+    <div className="mx-auto w-full">
       {/* bottom navbar */}
-      <div className="max-w-[1220px] mx-auto h-[70px] flex items-center w-full">
+      <div className="relative max-w-[1220px] mx-auto h-[70px] flex items-center w-full">
         <div className="flex justify-between items-center w-full ">
           {/* logo */}
           <div>
@@ -17,7 +28,6 @@ const NavBar = () => {
               className="w-full h-10"
             />
           </div>
-
           <div className="w-full flex gap-8 items-center">
             {/* search bar */}
             <div className="relative flex flex-grow items-center mx-4">
@@ -87,11 +97,10 @@ const NavBar = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* categories section */}
-      <div className="absolute left-0 w-full">
-        <HeroCategories />
+        {/* categories section */}
+        <div className="absolute w-full z-20 top-[70px] left-0 ">
+          <Categories categories={categories} />
+        </div>
       </div>
     </div>
   );

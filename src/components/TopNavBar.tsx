@@ -4,7 +4,7 @@ const TopNavBar = () => {
   return (
     <div className="bg-[#F0F1F1] h-[40px] flex items-center">
       <div className="min-w-[1220px] mx-auto flex justify-between items-center">
-        {/* Left section */}
+        {/* left section */}
         <div className="space-x-8 text-xs text-gray-700 flex items-center">
           <div className="flex justify-between gap-2 items-center">
             <span className="cursor-pointer text-orange-500">English</span>
@@ -20,7 +20,7 @@ const TopNavBar = () => {
           <span className="cursor-pointer">Helpline: 0964781656</span>
         </div>
 
-        {/* Right section */}
+        {/* right section */}
         <div className="space-x-8 text-xs text-gray-700">
           <span className="cursor-pointer">Become a Seller</span>
           <span className="cursor-pointer">Order Track</span>
