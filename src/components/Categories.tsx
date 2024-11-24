@@ -32,7 +32,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ categories }) => {
     <div
       key={levelIndex}
       className={`flex flex-col w-[230px] h-[381px] bg-white ${
-        levelIndex > 0 ? "border-l-[#D6D6D6] border-l-2" : ""
+        levelIndex > 0 ? "border-l-[#D6D6D6] border-l" : ""
       }`}
     >
       <ul>
