@@ -43,7 +43,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ categories }) => {
           >
             <Link
               href={category.link}
-              className={`flex flex-row justify-between items-center  px-2 pt-[10px] group-hover:text-[#F97316] ${
+              className={`flex flex-row justify-between items-center px-2 pt-[10px] group-hover:text-[#F97316] ${
                 isHovered(category) ? "text-[#F97316]" : " text-black"
               }`}
               onMouseEnter={() => handleMouseEnter(levelIndex, category)}
@@ -51,7 +51,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ categories }) => {
               <span className="text-xs">{category.title}</span>
               {category.childrens && category.childrens.length > 0 && (
                 <div
-                  className={`ml-2  transition-opacity ${
+                  className={`ml-2 transition-opacity ${
                     isHovered(category)
                       ? "group-hover:opacity-100"
                       : "opacity-0"

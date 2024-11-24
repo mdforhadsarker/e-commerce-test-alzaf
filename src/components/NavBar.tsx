@@ -2,15 +2,21 @@ import Image from "next/image";
 import Categories from "./Categories";
 import { Category, fetchCategories } from "../api/api";
 
-
-
 const NavBar = async () => {
   let categories: Category[] = [];
+  let error: string | null = null;
 
   try {
     categories = await fetchCategories();
-  } catch {
-    categories = [];
+    if (categories.length === 0) {
+      error = "No categories found.";
+    }
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      error = err.message;
+    } else {
+      error = "Failed to fetch categories. ";
+    }
   }
 
   return (
@@ -98,8 +104,12 @@ const NavBar = async () => {
           </div>
         </div>
         {/* categories section */}
-        <div className="absolute w-full z-20 top-[70px] left-0 ">
-          <Categories categories={categories} />
+        <div className="absolute w-full z-20 top-[70px] left-0">
+          {error ? (
+            <div className="text-red-500 p-4 text-center">{error}</div>
+          ) : (
+            <Categories categories={categories} />
+          )}
         </div>
       </div>
     </div>
