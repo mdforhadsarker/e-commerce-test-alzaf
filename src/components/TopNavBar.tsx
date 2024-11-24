@@ -6,14 +6,14 @@ const TopNavBar = () => {
       <div className="min-w-[1220px] mx-auto flex justify-between items-center">
         {/* left section */}
         <div className="space-x-8 text-xs text-gray-700 flex items-center">
-          <div className="flex justify-between gap-2 items-center">
+          <div className="flex justify-between gap-2 items-center cursor-pointer">
             <span className="cursor-pointer text-orange-500">English</span>
             <Image
               src="/Dropdown.png"
               alt="Arrow icon"
               width={500}
               height={500}
-              className="w-full h-4 cursor-pointer"
+              className="w-full h-4 "
             />
           </div>
           <span className="cursor-pointer">Help Center</span>
